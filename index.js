@@ -1,3 +1,153 @@
+const minNum = 1;
+const maxNum = 100;
+const answer = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+
+let attempts = 0;
+let guess;
+let running = true;
+
+while(running){
+
+  guess = window.prompt(`Guess a number between ${minNum} - ${maxNum}`);
+  guess = Number(guess);
+  if(isNaN(guess)){
+    window.alert("Please enter a valid number");
+  }
+  else if(guess < minNum || guess > maxNum){
+    window.alert("Please enter a valid number");
+  }
+  else {
+    attempts++;
+    if(guess < answer){
+      window.alert("TOO LOW! TRY AGAIN!");
+    }
+    else if (guess > answer){
+      window.alert("TOO HIGH!");
+    }
+    else {
+      window.alert(`CONGRATULATIONS YOU GUESSED THE NUMBER IN ${attempts}  AND THE ANSWER WAS ${answer}`);
+      running = false;
+  }
+  }
+
+  
+}
+
+
+// for (let i = 1; i <= 20; i++){
+//   if(i == 13){
+//     continue;
+//   }
+//   else {
+//     console.log(i);
+//   }
+// }
+
+// for(let i = 10; i > 0; i-=2){
+//   console.log(i);
+// }
+
+// console.log("HAPPY NEW YEAR!");
+
+// let loggedIn = false;
+// let username;
+// let password;
+
+// while(!loggedIn){
+//   username = window.prompt("Enter your username");
+//   password = window.prompt("Enter your password");
+
+//   if(username === "myUsername" && password === "myPassword"){
+//     console.log("You are now logged in");
+//     loggedIn = true;
+//   }
+//   else {
+//     console.log("Invalid credentials! Please try again");
+//   }
+
+// }
+
+// let username = "";
+
+
+// do{
+//   username = window.prompt("Enter your username: ");
+// }while(username === "" || username === null);
+
+// console.log(`Hello, ${username}`);
+
+// EQUALITY OPERRATORS
+
+// const PI = "3.14";
+
+// if(PI != "3.14"){
+//   console.log("That is not PI");
+//   else {
+//     console.log("That is PI");
+//   }
+// }
+
+// const temp = 25;
+
+// if (temp <= 0 || temp > 30){
+//   console.log("The weather is BAD");
+// }
+//   else {
+//     console.log("The weather is GOOD");
+//   }
+
+// const isSunny = false;
+
+// if(!isSunny){
+//   console.log("It is CLOUDY");
+// }
+// else {
+//   console.log("It is SUNNY");
+// }
+
+// NO METHOD CHAINING
+
+// let username = window.prompt("Enter your username; ");
+
+// username = username.trim();
+// let letter = username.charAt(0);
+// letter = letter.toUpperCase();
+
+// let extraChars = username.slice(1);
+// extraChars = extraChars.toLowerCase();
+// username = letter + extraChars;
+
+
+
+// METHOD CHAINING
+
+// let username = window.prompt("Enter your username; ");
+
+// username = username.trim().charAt(0).toUpperCase() + username.trim().slice(1).toLowerCase();
+
+// console.log(username);
+
+// const email = "Bro1@gmail.com";
+
+// let username = email.slice(0, email.indexOf("@"));
+// let extension = email.slice(email.indexOf("@") + 1);
+
+// console.log(username);
+// console.log(extension);
+
+// const fullName = "Broseph Code";
+
+// let firstName = fullName.slice(0, 3);
+// let lastName = fullName.slice(4, 8);
+
+// let firstChar = fullName.slice(0, 1);
+// let lastChar = fullName.slice(-1);
+// let firstName = fullName.slice(0, fullName.indexOf(" "));
+// let lastName = fullName.slice(fullName.indexOf(" ") + 1);
+
+
+// console.log(firstName);
+
 // let phoneNumber = "123-456-7890"
 
 // phoneNumber = phoneNumber.padEnd(15, "0");
