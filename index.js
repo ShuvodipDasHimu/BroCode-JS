@@ -1,26 +1,65 @@
-function add(x, y){
-  return x + y;
+// TEMPARATURE CONVERSION PROGRAM
+
+const textBox = document.getElementById("textBox");
+const toFahrenheit = document.getElementById("toFahrenheit");
+const toCelsius = document.getElementById("toCelsius");
+const result = document.getElementById("result");
+let temp;
+
+function convert(){
+  if(toFahrenheit.checked){
+    temp = Number(textBox.value);
+    temp = temp * 9 / 5 + 32;
+    result.textContent = temp.toFixed(1) + "ºF";
+  }
+  else if(toCelsius.checked){
+    temp = Number(textBox.value);
+    temp = (temp - 32) * 5 / 9;
+    result.textContent = temp.toFixed(1) + "ºC";
+  }
+  else {
+    result.textContent = "Select a unit";
+  }
 }
 
-function subtract(x, y){
-  return x - y;
-}
-function multiply(x, y){
-  return x * y;
-}
-function divide(x, y){
-  return x / y;
-}
+// function1();
+// function2();
+
+// let x = 3;
+
+// function function1(){
+//   let x = 1;
+//   console.log(x);
+// }
+
+// function function2(){
+//   let x = 2;
+//   console.log(x);
+// }
+
+// function add(x, y){
+//   return x + y;
+// }
+
+// function subtract(x, y){
+//   return x - y;
+// }
+// function multiply(x, y){
+//   return x * y;
+// }
+// function divide(x, y){
+//   return x / y;
+// }
 
 
-function isEven(number){
-  return number % 2 === 0 ? true : false;
-}
-function isValidEmail(email){
-  return email.includes("@") ? true : false;
-}
+// function isEven(number){
+//   return number % 2 === 0 ? true : false;
+// }
+// function isValidEmail(email){
+//   return email.includes("@") ? true : false;
+// }
 
-console.log(isValidEmail("Shuvodipgmail.com"));
+// console.log(isValidEmail("Shuvodipgmail.com"));
 
 
 // function happyBirthday(username, age){
